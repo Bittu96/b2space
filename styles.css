@@ -1,10 +1,14 @@
 :root {
-  --bg-color: #070a2d;
-  --font-color: #cdced5;
-  --link-color: lightblue;
+  /* --bg-color: #d4f6ff; */
+  /* background: rgb(67,255,231); */
+  background: linear-gradient(45deg, #e6ffd9 0%, #fffeef 100%);
+  /* #fffeef; */
+  /* #fffbd9; */
+  --font-color: #000000;
+  --link-color: #000000;
   --text-color-1: rgba(0, 179, 119, 1);
   --text-color-2: rgba(214, 255, 127, 1);
-  --headline-color: white;
+  --headline-color: #000000;
 }
 html {
   scroll-behavior: smooth;
@@ -66,9 +70,9 @@ nav {
 }
 nav ul {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
-  margin: 0 1rem;
+  margin: 0 0rem;
 }
 nav li {
   display: block;
@@ -78,12 +82,11 @@ nav li a {
   text-align: center;
   padding: 1rem;
   font-size: 13px;
-  color: #fff;
 }
-nav ul li:nth-child(1) {
+/* nav ul li:nth-child(1) {
   justify-self: start;
   margin-right: 2rem;
-}
+} */
 
 /* HOME */
 
@@ -124,9 +127,13 @@ main {
   position: relative;
 }
 
+.info-container h1 {
+  border-bottom: 1px #000000 solid;
+}
+
 /* SOCIAL SVG CONTAINER */
 .social-container {
-  /* transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1); */
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
   position: absolute;
   top: 0px;
   right: -20px;
@@ -140,7 +147,6 @@ main {
 /* .social-container:hover{
   background-color: rgb(64, 68, 105);
   padding-left: 100px;
-
 } */
 
 main hr {
@@ -165,7 +171,8 @@ main hr {
 
 .quote-container {
   padding: 16px;
-  background-color: #838596;
+  /* background-color: #838596; */
+  border: 1px #000000 solid;
   opacity: 0;
   border-radius: 3px;
   filter: drop-shadow(0 0 0 rgba(54, 54, 54, 0.2));
@@ -209,7 +216,7 @@ main hr {
   gap: 8px;
   padding: 16px;
   border-radius: 5px;
-  background: #222431;
+  background: transparent;
 }
 .repository-container h3 {
   text-align: left;
@@ -220,6 +227,10 @@ main hr {
 
 .repository-container p {
   font-size: 12px;
+}
+.repository-container:hover {
+  /* color: black; */
+  background-color: var(--text-color-2);
 }
 
 /* Repo Head */
@@ -308,6 +319,9 @@ footer {
   padding: 10vh;
 }
 
+.empty-box {
+  width: 80px;
+}
 /* MEDIA QUERIES */
 
 /* FOR TABLET */
@@ -402,7 +416,7 @@ footer {
   background-size: 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animated_text 10s ease-in-out infinite;
+  animation: animated_text 5s ease-in-out infinite;
 }
 
 /* must have 1 inner div that wrap all content to work */
@@ -417,3 +431,21 @@ footer {
   align-items: flex-end;
   padding-bottom: 15vh;
 } */
+
+/* download button */
+.btn {
+  border: 1px var(--text-color-1) solid;
+  background-color: transparent;
+
+  /* background-color:  var(--text-color-2); */
+  /* border: none; */
+  color: var(--text-color-1);
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 11px;
+  border-radius: 5px;
+}
+.btn:hover {
+  /* color: black; */
+  background-color: var(--text-color-2);
+}
