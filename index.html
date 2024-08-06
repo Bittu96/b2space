@@ -1,347 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Bittu96</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <title>b2space</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Work+Sans:wght@400;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
+  <noscript>
     <link
-      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Work+Sans:wght@400;800&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
+      rel="stylesheet" type="text/css" />
+  </noscript>
 
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Work+Sans:wght@400;800&display=swap"
-        rel="stylesheet"
-        type="text/css"
-      />
-    </noscript>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#top">HOME</a></li>
+      <li><a href="#project">PROJECTS</a></li>
+      <li><a href="#about">ABOUT</a></li>
+    </ul>
+  </nav>
 
-  <body>
-    <nav>
-      <ul>
-        <li><a href="#top">HOME</a></li>
-        <li><a href="#project">PROJECTS</a></li>
-        <li><a href="#about">ABOUT</a></li>
-      </ul>
-    </nav>
-
-    <!-- Home -->
-    <section class="center">
-      <main>
-        <div class="img-info-container">
-          <div class="img-container">
-            <img
-              width="80"
-              height="80"
-              src="./asset/img/gopher.gif"
-              alt="pfp"
-            />
-          </div>
-          <div class="info-container">
-            <div class="social-container">
-              <a href="https://github.com/Bittu96" target="_blank"
-                ><img
-                  width="24"
-                  height="24"
-                  src="./asset/svg/github.svg"
-                  alt="github"
-              /></a>
-              <a href="www.linkedin.com/in/mrudulkatla" target="_blank"
-                ><img
-                  width="24"
-                  height="24"
-                  src="./asset/svg/linkedin.svg"
-                  alt="linkedin"
-              /></a>
-            </div>
-            <h1>
-              Hi! <br />
-              I'm MRUDUL
-            </h1>
-          </div>
-          <div class="img-container">
-            <div class="empty-box"></div>
-          </div>
+  <!-- Home -->
+  <section class="center">
+    <main>
+      <div class="img-info-container">
+        <div class="img-container">
+          <img width="80" height="80" src="./asset/img/gopher.gif" alt="pfp" />
         </div>
-
-        <p class="user-bio">
-          I'm a coding enthusiast!
-          <br />
-          Passionate about crafting digital experiences and I'm into backend,
-          frontend, architecture design
-          <br />
-          <br />
-          Also interested in Digital Art, Graphic design, Web, Software, Board
-          Games, Guitar, Badminton
-        </p>
-        <!-- Quote  -->
-        <div class="quote-container">
-          <p>
-            <i>
-              “The greatest glory in living lies not in never falling, but in
-              rising every time we fall.”
-              <br />
-              – Nelson Mandela
-            </i>
-          </p>
+        <div class="info-container">
+          <div class="social-container">
+            <a href="https://github.com/Bittu96" target="_blank"><img width="24" height="24"
+                src="./asset/svg/github.svg" alt="github" /></a>
+            <a href="www.linkedin.com/in/mrudulkatla" target="_blank"><img width="24" height="24"
+                src="./asset/svg/linkedin.svg" alt="linkedin" /></a>
+          </div>
+          <h1>
+            Hi! <br />
+            I'm MRUDUL
+          </h1>
         </div>
-      </main>
-    </section>
-    <!-- End of Home -->
-
-    <!-- Start of Project -->
-    <section class="center">
-      <div id="project">
-        <h2 class="">PROJECTS</h2>
-        <!-- project container/ grid -->
-        <div class="project-container">
-           <!-- Repo -->
-           <div class="repository-container">
-            <div class="repository-head">
-              <a href=https://github.com/Bittu96/TicTacToe target="_blank">
-                <h3>TicTacToe</h3>
-              </a>
-              <a target="_blank"><img
-                  width="16"
-                  height="16"
-                  src="./asset/svg/external-link.svg"
-                  alt="external-link"
-              /></a>
-            </div>
-            <p class="repository-description">
-              Check your covid jab availability in few clicks
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Java</span>
-            </div>
-          </div>
-          <!-- Repo End -->
-
-           <!-- Repo -->
-           <div class="repository-container">
-            <div class="repository-head">
-              <a href=https://github.com/Bittu96/youtubeAnalytics target="_blank">
-                <h3>youtubeAnalytics</h3>
-              </a>
-              <a target="_blank"><img
-                  width="16"
-                  height="16"
-                  src="./asset/svg/external-link.svg"
-                  alt="external-link"
-              /></a>
-            </div>
-            <p class="repository-description">
-              Check your covid jab availability in few clicks
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Go</span>
-              <span class="language-used">Gin</span>
-              <span class="language-used">Graphs</span>
-            </div>
-          </div>
-          <!-- Repo End -->
-
-          <!-- Repo -->
-          <div class="repository-container">
-            <div class="repository-head">
-              <a href=https://github.com/Bittu96/YourJabNotifier target="_blank">
-                <h3>YourJabNotifier</h3>
-              </a>
-              <a target="_blank"><img
-                  width="16"
-                  height="16"
-                  src="./asset/svg/external-link.svg"
-                  alt="external-link"
-              /></a>
-            </div>
-            <p class="repository-description">
-              Check your covid jab availability in few clicks
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Node</span>
-              <span class="language-used">React</span>
-              <span class="language-used">AWS</span>
-            </div>
-          </div>
-          <!-- Repo End -->
-
-          <!-- Repo -->
-          <div class="repository-container">
-            <div class="repository-head">
-              <a href=https://github.com/Bittu96/chatterbox target="_blank">
-                <h3>chatterBox</h3>
-              </a>
-              <a target="_blank"><img
-                  width="16"
-                  height="16"
-                  src="./asset/svg/external-link.svg"
-                  alt="external-link"
-              /></a>
-            </div>
-            <p class="repository-description">
-              simple 1v1 chat application. 
-              <br/>
-              login -> add friend -> chat chat chat!
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Go</span>
-              <span class="language-used">Next.js</span>
-              <span class="language-used">Websockets</span>
-            </div>
-          </div>
-          <!-- Repo End -->
-
-          <!-- Repo -->
-          <div class="repository-container">
-            <div class="repository-head">
-              <a href=https://github.com/Bittu96/easypool target="_blank">
-                <h3>easypool</h3>
-              </a>
-              <a target="_blank"><img
-                  width="16"
-                  height="16"
-                  src="./asset/svg/external-link.svg"
-                  alt="external-link"
-              /></a>
-            </div>
-            <p class="repository-description">
-              Concurrent worker pools made easy. Golang package published.
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Go</span>
-              <span class="language-used">Concurrency</span>
-            </div>
-          </div>
-          <!-- Repo End -->
-
-          <!-- Repo -->
-          <div class="repository-container">
-            <div class="repository-head">
-              <a href=https://github.com/Bittu96/BlockchainTrials target="_blank">
-                <h3>BlockchainTrials</h3>
-              </a>
-              <a target="_blank"><img
-                  width="16"
-                  height="16"
-                  src="./asset/svg/external-link.svg"
-                  alt="external-link"
-              /></a>
-            </div>
-            <p class="repository-description">
-              stepping into block chain.
-              <br/>
-             Blockchain code based on my perspective
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Go</span>
-              <span class="language-used">Blockchain</span>
-            </div>
-          </div>
-          <!-- Repo End -->
-
-           <!-- Repo -->
-           <div class="repository-container">
-            <div class="repository-head">
-            </div>
-            <p class="repository-description">
-             Find more in my repo...
-            </p>
-            <div class="repository-language-used-container">
-              <span class="language-used">Click</span>
-              <span class="language-used">Link</span>
-              <span class="language-used">below</span>
-            </div>
-          </div>
-          <!-- Repo End -->
+        <div class="img-container">
+          <div class="empty-box"></div>
         </div>
-
-        <!-- To github repos -->
-        <div class="repository-container more-repo">
-          more at
-          <a
-            href="https://github.com/Bittu96?tab=repositories"
-            target="_blank"
-            >GITHUB <img src="./asset/svg/external-link.svg" alt=""
-          /></a>
-        </div>
-        <!-- To github repos End-->
       </div>
-    </section>
-    <!-- End of Project -->
 
-    <!-- About -->
-    <div class="center">
-      <div id="about">
-        <!-- Image  -->
-        <div class="about-img-container">
-          <img width="180" height="180" src="./asset/img/me.jpg" alt="pfp" />
-        </div>
-        <!-- Name -->
-        <h2 class="gradient">Mrudul Katla</h2>
-        <!-- social media container -->
-        <ul class="about-social-container">
-          <li>
-            <img src="./asset/svg/github.svg" alt="Github" />
-            <a href="https://github.com/Bittu96">Github</a>
-          </li>
-
-          <li>
-            <img src="./asset/svg/mail.svg" alt="LinkedIn" />
-            <a href="mailto:mrudulkatla@gmail.com">Mail</a>
-          </li>
-
-          <li>
-            <img src="./asset/svg/linkedin.svg" alt="LinkedIn" />
-            <a href="www.linkedin.com/in/mrudulkatla"> LinkedIn</a>
-          </li>
-        </ul>
-        <!-- long bio -->
+      <p class="user-bio">
+        I'm a coding enthusiast!
+        <br />
+        Passionate about crafting digital experiences and I'm mostly into backend development, architecture design and
+        little into frontend
+        <br />
+        <br />
+        Also interested in Art, Board
+        Games & Badminton
+      </p>
+      <!-- Quote  -->
+      <div class="quote-container">
         <p>
-          Coding is my therapy.<br /><br />
-          Let's chat about how I can help you achieve your digital goals.
+          <i>
+            “The greatest glory in living lies not in never falling, but in
+            rising every time we fall.”
+            <br />
+            – Nelson Mandela
+          </i>
         </p>
-        <!-- Resume -->
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </div>
+    </main>
+  </section>
+  <!-- End of Home -->
 
-        <div>
-          <button class="btn"><i class="fa fa-download"></i> Resume</button>
+  <!-- Start of Project -->
+  <section class="center">
+    <div id="project">
+      <h2 class="">PROJECTS</h2>
+      <!-- project container/ grid -->
+      <div class="project-container">
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+            <a href=https://github.com/Bittu96/TicTacToe target="_blank">
+              <h3>TicTacToe</h3>
+            </a>
+            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
+                alt="external-link" /></a>
+          </div>
+          <p class="repository-description">
+            Your favorite classic game
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Java</span>
+          </div>
         </div>
+        <!-- Repo End -->
+
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+            <a href=https://github.com/Bittu96/youtubeAnalytics target="_blank">
+              <h3>youtubeAnalytics</h3>
+            </a>
+            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
+                alt="external-link" /></a>
+          </div>
+          <p class="repository-description">
+            Check your covid jab availability in few clicks
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Go</span>
+            <span class="language-used">Gin</span>
+            <span class="language-used">Graphs</span>
+          </div>
+        </div>
+        <!-- Repo End -->
+
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+            <a href=https://github.com/Bittu96/YourJabNotifier target="_blank">
+              <h3>YourJabNotifier</h3>
+            </a>
+            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
+                alt="external-link" /></a>
+          </div>
+          <p class="repository-description">
+            Check your covid jab availability in few clicks
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Node</span>
+            <span class="language-used">React</span>
+            <span class="language-used">AWS</span>
+          </div>
+        </div>
+        <!-- Repo End -->
+
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+            <a href=https://github.com/Bittu96/chatterbox target="_blank">
+              <h3>chatterBox</h3>
+            </a>
+            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
+                alt="external-link" /></a>
+          </div>
+          <p class="repository-description">
+            simple 1v1 chat application.
+            <br />
+            login -> add friend -> chat chat chat!
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Go</span>
+            <span class="language-used">Next.js</span>
+            <span class="language-used">Websockets</span>
+          </div>
+        </div>
+        <!-- Repo End -->
+
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+            <a href=https://github.com/Bittu96/easypool target="_blank">
+              <h3>easypool</h3>
+            </a>
+            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
+                alt="external-link" /></a>
+          </div>
+          <p class="repository-description">
+            Concurrent worker pools made easy (my open source work)
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Go</span>
+            <span class="language-used">Concurrency</span>
+          </div>
+        </div>
+        <!-- Repo End -->
+
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+            <a href=https://github.com/Bittu96/BlockchainTrials target="_blank">
+              <h3>BlockchainTrials</h3>
+            </a>
+            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
+                alt="external-link" /></a>
+          </div>
+          <p class="repository-description">
+            experimenting with block chain
+            <br />
+            Blockchain golang package (my open source work)
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Go</span>
+            <span class="language-used">Blockchain</span>
+          </div>
+        </div>
+        <!-- Repo End -->
+
+        <!-- Repo -->
+        <div class="repository-container">
+          <div class="repository-head">
+          </div>
+          <p class="repository-description">
+            Find more in my repo...
+          </p>
+          <div class="repository-language-used-container">
+            <span class="language-used">Click</span>
+            <span class="language-used">Link</span>
+            <span class="language-used">below</span>
+          </div>
+        </div>
+        <!-- Repo End -->
+      </div>
+
+      <!-- To github repos -->
+      <div class="repository-container more-repo">
+        more at
+        <a href="https://github.com/Bittu96?tab=repositories" target="_blank">GITHUB <img
+            src="./asset/svg/external-link.svg" alt="" /></a>
+      </div>
+      <!-- To github repos End-->
+    </div>
+  </section>
+  <!-- End of Project -->
+
+  <!-- About -->
+  <div class="center">
+    <div id="about">
+      <!-- Image  -->
+      <div class="about-img-container">
+        <img width="180" height="180" src="./asset/img/me.jpg" alt="pfp" />
+      </div>
+
+      <!-- Name -->
+      <h2 class="gradient">Mrudul Katla</h2>
+
+      <!-- social media container -->
+      <ul class="about-social-container">
+        <li>
+          <img src="./asset/svg/github.svg" alt="Github" />
+          <a href="https://github.com/Bittu96">Github</a>
+        </li>
+
+        <li>
+          <img src="./asset/svg/mail.svg" alt="LinkedIn" />
+          <a href="mailto:mrudulkatla@gmail.com">Mail</a>
+        </li>
+
+        <li>
+          <img src="./asset/svg/linkedin.svg" alt="LinkedIn" />
+          <a href="www.linkedin.com/in/mrudulkatla"> LinkedIn</a>
+        </li>
+      </ul>
+      <!-- long bio -->
+      <p>
+        Coding is my therapy.<br /><br />
+        Let's chat about how I can help you achieve your digital goals.
+      </p>
+
+      <!-- Resume -->
+      <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <div>
+        <button class="btn"><i class="fa fa-download"></i> Resume</button>
       </div>
     </div>
+  </div>
 
-    <footer>
-      <!-- <p>
-        ©
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Built by <a href="https://github.com/notshanxx">notshanxx</a>
-      </p> -->
-    </footer>
+  <footer>
+  </footer>
 
-    <!-- <h1 id="fin" style="
-        font-family: 'Work Sans', sans-serif;
-        font-size: 20px;
-        margin: 100vh 0 50vh 0;
-      ">
-      <i>~ fin ~</i>
-    </h1> -->
-    <!-- remove if you want to remove hover effect -->
-    <script type="module" src="./script/event-effect.js"></script>
-  </body>
+  <script type="module" src="./script/event-effect.js"></script>
+</body>
+
 </html>
