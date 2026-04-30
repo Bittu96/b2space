@@ -1,289 +1,1251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="fast2sms" content="H0FukLMH2GHfOwQI3MzJz7aXi6rldf9d">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrudul Katla — Senior Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-  <title>b2space</title>
+:root{
+  --cream:#faf6ef;
+  --cream2:#f2ebe0;
+  --cream3:#e8ddd0;
+  --paper:#fff9f2;
+  --sage:#5c8c60;
+  --sage2:#84b088;
+  --sage3:#c4ddc6;
+  --sage4:#e8f2e8;
+  --gold:#b8862a;
+  --gold2:#d4a84b;
+  --gold3:#f0d898;
+  --gold4:#fdf5e0;
+  --sky:#6494b0;
+  --sky2:#a0c4d8;
+  --sky3:#d8edf5;
+  --rose:#b86858;
+  --rose2:#d4907e;
+  --rose3:#f0c8b8;
+  --ink:#1e1810;
+  --ink2:#3d3020;
+  --ink3:#6b5840;
+  --ink4:#9a8870;
+  --border:rgba(184,134,42,0.15);
+  --shadow:0 4px 24px rgba(30,24,16,0.08);
+  --shadow-lg:0 12px 48px rgba(30,24,16,0.12);
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Work+Sans:wght@400;800&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Outfit',sans-serif;
+  font-size:15px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
 
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Work+Sans:wght@400;800&display=swap"
-      rel="stylesheet" type="text/css" />
-  </noscript>
+/* ─── TEXTURE OVERLAY ─── */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:0.6;
+}
 
-  <link rel="stylesheet" href="styles.css" />
+/* ─── DRIFTING CLOUDS ─── */
+.cloud-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;isolation:isolate;}
+.cloud{position:absolute;animation:driftCloud linear infinite;}
+.cloud::after{content:'';position:absolute;inset:0;border-radius:50%;filter:blur(22px);}
+.cloud.warm::after{background:rgba(255,250,240,0.6);}
+.cloud.cool::after{background:rgba(200,220,240,0.4);}
+.c1{width:320px;height:85px;top:6%;animation-duration:55s;animation-delay:-5s;opacity:0.8;}
+.c2{width:200px;height:60px;top:18%;animation-duration:70s;animation-delay:-28s;opacity:0.5;}
+.c3{width:400px;height:100px;top:55%;animation-duration:48s;animation-delay:-12s;opacity:0.45;}
+.c4{width:250px;height:70px;top:72%;animation-duration:80s;animation-delay:-40s;opacity:0.35;}
+@keyframes driftCloud{from{transform:translateX(-120%);}to{transform:translateX(120vw);}}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  padding:1rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,246,239,0.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:600;font-style:italic;
+  color:var(--ink2);text-decoration:none;
+  letter-spacing:0.01em;
+}
+.nav-logo span{color:var(--sage);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{
+  font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink4);text-decoration:none;
+  position:relative;padding-bottom:2px;
+  transition:color 0.25s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:1.5px;background:var(--sage);
+  transition:width 0.25s;
+}
+.nav-links a:hover{color:var(--sage);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  font-size:0.75rem;font-weight:600;letter-spacing:0.06em;
+  padding:0.5rem 1.4rem;
+  border-radius:30px;
+  background:var(--sage);color:#fff;
+  text-decoration:none;
+  box-shadow:0 2px 12px rgba(92,140,96,0.3);
+  transition:all 0.25s;
+}
+.nav-cta:hover{background:var(--sage2);transform:translateY(-1px);}
+
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:7rem 4rem 4rem;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(150deg,var(--sky3) 0%,var(--cream) 40%,var(--gold4) 100%);
+  z-index:0;
+}
+/* painted hills */
+.hero-hills{
+  position:absolute;bottom:0;left:0;right:0;
+  z-index:1;pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:5rem;align-items:center;
+  max-width:1200px;margin:0 auto;width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--sage);
+  background:rgba(92,140,96,0.1);
+  border:1px solid rgba(92,140,96,0.25);
+  border-radius:30px;
+  padding:0.35rem 1rem;
+  margin-bottom:1.5rem;
+}
+.hero-badge::before{content:'✦';font-size:0.6rem;}
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,6vw,5.5rem);
+  font-weight:300;line-height:1.05;
+  letter-spacing:-0.02em;color:var(--ink);
+  margin-bottom:0.4rem;
+}
+h1 strong{font-weight:700;}
+h1 em{font-style:italic;color:var(--sage);}
+.hero-role{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-style:italic;font-weight:400;
+  color:var(--ink3);margin-bottom:1.5rem;
+}
+.hero-desc{
+  font-size:0.95rem;color:var(--ink3);
+  max-width:520px;line-height:1.9;margin-bottom:2rem;
+}
+.hero-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.2rem;}
+.chip-pill{
+  font-size:0.7rem;font-weight:600;
+  padding:0.28rem 0.8rem;border-radius:20px;
+  border:1.5px solid;letter-spacing:0.04em;
+}
+.cp-go{background:var(--sky3);border-color:var(--sky2);color:var(--sky);}
+.cp-arch{background:var(--rose3);border-color:var(--rose2);color:var(--rose);}
+.cp-kafka{background:var(--gold4);border-color:var(--gold3);color:var(--gold);}
+.cp-cloud{background:var(--sage4);border-color:var(--sage3);color:var(--sage);}
+.cp-db{background:var(--cream3);border-color:var(--cream3);color:var(--ink3);}
+
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-fill{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--sage);color:#fff;
+  text-decoration:none;padding:0.75rem 2rem;border-radius:30px;
+  font-size:0.82rem;font-weight:600;letter-spacing:0.04em;
+  box-shadow:0 4px 18px rgba(92,140,96,0.35);
+  transition:all 0.25s;
+}
+.btn-fill:hover{background:var(--sage2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(92,140,96,0.4);}
+.btn-line{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  color:var(--ink2);text-decoration:none;padding:0.75rem 2rem;border-radius:30px;
+  font-size:0.82rem;font-weight:600;letter-spacing:0.04em;
+  border:1.5px solid var(--border);background:rgba(255,255,255,0.7);
+  transition:all 0.25s;
+}
+.btn-line:hover{border-color:var(--sage2);background:#fff;transform:translateY(-2px);}
+
+/* Hero visual panel */
+.hero-visual{display:flex;flex-direction:column;align-items:center;gap:1.2rem;}
+.hero-card{
+  background:rgba(255,255,255,0.75);
+  border:1.5px solid rgba(184,134,42,0.12);
+  border-radius:28px;
+  padding:2rem;
+  box-shadow:var(--shadow-lg);
+  backdrop-filter:blur(8px);
+  width:100%;
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+}
+.photo-ring{
+  width:140px;height:140px;border-radius:50%;
+  background:linear-gradient(135deg,var(--sage3),var(--sky3));
+  padding:4px;
+  box-shadow:0 8px 28px rgba(92,140,96,0.25);
+}
+.photo-ring img{
+  width:100%;height:100%;border-radius:50%;
+  object-fit:cover;border:3px solid #fff;
+}
+.gopher-row{
+  display:flex;align-items:center;gap:0.8rem;
+  background:var(--sage4);border-radius:16px;padding:0.7rem 1rem;
+  border:1px solid rgba(92,140,96,0.2);width:100%;
+}
+.gopher-row img{width:52px;height:52px;object-fit:contain;}
+.gopher-text{font-size:0.78rem;color:var(--ink3);line-height:1.5;}
+.gopher-text strong{display:block;color:var(--sage);font-size:0.82rem;}
+
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;width:100%;
+}
+.hstat{
+  background:rgba(255,255,255,0.8);
+  border:1px solid var(--border);border-radius:16px;
+  padding:0.9rem 0.5rem;text-align:center;
+}
+.hstat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem;font-weight:700;
+  color:var(--ink);display:block;line-height:1;
+}
+.hstat-lbl{font-size:0.62rem;font-weight:600;color:var(--ink4);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.2rem;}
+
+/* ─── TICKER ─── */
+.ticker-wrap{
+  background:var(--sage);padding:0.9rem 0;
+  overflow:hidden;position:relative;z-index:2;
+}
+.ticker-inner{
+  display:flex;gap:0;
+  animation:ticker 30s linear infinite;
+  white-space:nowrap;
+}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-size:0.75rem;font-weight:600;letter-spacing:0.08em;
+  color:rgba(255,255,255,0.9);padding:0 2.5rem;
+  border-right:1px solid rgba(255,255,255,0.2);
+}
+.ticker-item::before{content:'✦';color:rgba(255,255,255,0.45);font-size:0.6rem;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ─── SECTION SHARED ─── */
+.sec{position:relative;z-index:2;}
+.sec-inner{max-width:1200px;margin:0 auto;padding:6rem 4rem;}
+.sec-label{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:0.5rem;
+}
+.sec-label::before{content:'';width:24px;height:1.5px;background:var(--sage);display:block;}
+.sec-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3.2rem);font-weight:600;
+  color:var(--ink);letter-spacing:-0.02em;line-height:1.15;
+  margin-bottom:0.6rem;
+}
+.sec-h em{font-style:italic;color:var(--sage);}
+.sec-sub{font-size:0.92rem;color:var(--ink3);max-width:580px;line-height:1.85;margin-bottom:3rem;}
+
+.wave{width:100%;overflow:hidden;line-height:0;z-index:2;position:relative;}
+.wave svg{display:block;width:100%;}
+
+/* ─── EXPERIENCE ─── */
+#experience{background:var(--paper);}
+.exp-list{display:flex;flex-direction:column;gap:0;position:relative;}
+.exp-list::before{
+  content:'';position:absolute;left:190px;top:0;bottom:0;width:1.5px;
+  background:linear-gradient(to bottom,transparent,var(--sage3) 5%,var(--sage3) 95%,transparent);
+}
+.exp-item{
+  display:grid;grid-template-columns:190px 1fr;gap:0;
+  padding:2.5rem 0;border-bottom:1px solid var(--border);
+}
+.exp-item:last-child{border-bottom:none;}
+.exp-meta{padding-right:2.5rem;text-align:right;padding-top:0.2rem;}
+.exp-period{
+  font-size:0.72rem;font-weight:600;color:var(--sage);
+  letter-spacing:0.06em;display:block;margin-bottom:0.3rem;
+}
+.exp-co{font-size:0.8rem;font-weight:700;color:var(--ink3);}
+.exp-loc{font-size:0.7rem;color:var(--ink4);margin-top:0.15rem;}
+.exp-dot{
+  position:absolute;left:190px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--sage);border:2.5px solid var(--paper);
+  transform:translate(-4px, 10px);
+  box-shadow:0 0 0 3px rgba(92,140,96,0.2);
+}
+.exp-content{padding-left:2.5rem;}
+.exp-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:600;color:var(--ink);
+  margin-bottom:0.8rem;
+}
+.exp-badge{
+  display:inline-block;
+  font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  background:var(--gold4);border:1px solid var(--gold3);color:var(--gold);
+  padding:0.15rem 0.6rem;border-radius:10px;margin-left:0.6rem;
+  vertical-align:middle;
+}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+.exp-bullets li{
+  font-size:0.85rem;color:var(--ink3);line-height:1.7;
+  padding-left:1.2rem;position:relative;
+}
+.exp-bullets li::before{
+  content:'→';position:absolute;left:0;
+  color:var(--sage2);font-size:0.75rem;top:0.05rem;
+}
+.exp-highlights{
+  display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;
+}
+.exp-tag{
+  font-size:0.62rem;font-weight:600;
+  padding:0.2rem 0.65rem;border-radius:12px;
+  background:var(--sage4);border:1px solid var(--sage3);color:var(--sage);
+}
+.exp-tag.gold{background:var(--gold4);border-color:var(--gold3);color:var(--gold);}
+.exp-tag.sky{background:var(--sky3);border-color:var(--sky2);color:var(--sky);}
+.exp-tag.rose{background:var(--rose3);border-color:var(--rose2);color:var(--rose);}
+
+/* ─── SKILLS ─── */
+#skills{background:var(--cream2);}
+.skills-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+.skill-card{
+  background:var(--paper);
+  border:1.5px solid var(--border);border-radius:20px;
+  padding:1.8rem;
+  box-shadow:var(--shadow);
+  transition:all 0.3s;
+  position:relative;overflow:hidden;
+}
+.skill-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;
+}
+.skill-card.s-go::before{background:linear-gradient(90deg,var(--sky),var(--sky2));}
+.skill-card.s-backend::before{background:linear-gradient(90deg,var(--sage),var(--sage2));}
+.skill-card.s-data::before{background:linear-gradient(90deg,var(--rose),var(--rose2));}
+.skill-card.s-cloud::before{background:linear-gradient(90deg,var(--gold),var(--gold2));}
+.skill-card.s-arch::before{background:linear-gradient(90deg,var(--ink3),var(--ink4));}
+.skill-card.s-msg::before{background:linear-gradient(90deg,#8a70b8,#b098d0);}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.sk-icon{font-size:1.8rem;margin-bottom:0.8rem;display:block;}
+.sk-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.35rem;
+}
+.sk-desc{font-size:0.8rem;color:var(--ink4);line-height:1.65;margin-bottom:1rem;}
+.sk-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.sk-tag{
+  font-size:0.62rem;font-weight:600;
+  padding:0.18rem 0.6rem;border-radius:10px;
+  background:var(--cream2);color:var(--ink3);
+  border:1px solid var(--cream3);
+}
+
+/* ─── PROJECTS ─── */
+#projects{background:var(--paper);}
+.projects-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:2rem;
+}
+.proj-card{
+  background:#fff;
+  border:1.5px solid var(--border);border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:all 0.35s;
+  text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;
+}
+.proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(184,134,42,0.3);}
+
+/* Project illustration containers */
+.proj-visual{
+  height:200px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.proj-visual svg{width:100%;height:100%;position:absolute;inset:0;}
+
+.proj-body{padding:1.6rem;flex:1;display:flex;flex-direction:column;}
+.proj-num{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;color:var(--ink4);text-transform:uppercase;margin-bottom:0.4rem;}
+.proj-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:600;color:var(--ink);
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:0.5rem;gap:0.5rem;
+}
+.proj-arrow{
+  font-size:1rem;color:var(--sage2);flex-shrink:0;margin-top:0.15rem;
+  transition:transform 0.25s,color 0.25s;
+}
+.proj-card:hover .proj-arrow{transform:translate(3px,-3px);color:var(--sage);}
+.proj-desc{font-size:0.83rem;color:var(--ink3);line-height:1.75;flex:1;margin-bottom:1rem;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.ptag{
+  font-size:0.62rem;font-weight:600;
+  padding:0.2rem 0.65rem;border-radius:12px;
+}
+.pt-go{background:var(--sky3);color:var(--sky);}
+.pt-node{background:var(--gold4);color:var(--gold);}
+.pt-react{background:var(--sky3);color:var(--sky);}
+.pt-aws{background:#fff5e8;color:#c06000;}
+.pt-java{background:var(--rose3);color:var(--rose);}
+.pt-oss{background:var(--sage4);color:var(--sage);}
+.pt-kafka{background:#f0e8f8;color:#7050a0;}
+.pt-ws{background:#e8f0f8;color:#405080;}
+
+/* ─── PUBLICATIONS / ACHIEVEMENTS ─── */
+#achievements{background:var(--cream2);}
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.ach-card{
+  background:var(--paper);border:1.5px solid var(--border);border-radius:20px;
+  padding:1.8rem;box-shadow:var(--shadow);
+  display:flex;gap:1rem;align-items:flex-start;
+}
+.ach-icon{
+  font-size:1.6rem;flex-shrink:0;
+  width:52px;height:52px;border-radius:14px;
+  background:var(--sage4);border:1px solid var(--sage3);
+  display:flex;align-items:center;justify-content:center;
+}
+.ach-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;}
+.ach-desc{font-size:0.82rem;color:var(--ink3);line-height:1.7;}
+
+/* ─── ABOUT ─── */
+#about{background:var(--sky3);}
+.about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:center;}
+.about-left{display:flex;flex-direction:column;align-items:center;gap:1.5rem;}
+.about-photo-frame{
+  width:280px;height:280px;border-radius:50%;
+  background:linear-gradient(135deg,var(--sage3),var(--sky2));
+  padding:5px;box-shadow:var(--shadow-lg);
+  position:relative;
+}
+.about-photo-frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid #fff;}
+.about-photo-frame::after{
+  content:'';
+  position:absolute;inset:-12px;border-radius:50%;
+  border:1.5px dashed rgba(92,140,96,0.3);
+}
+.gopher-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:20px;
+  padding:1rem 1.3rem;box-shadow:var(--shadow);
+  display:flex;align-items:center;gap:0.8rem;
+  width:100%;max-width:300px;
+}
+.gopher-card img{width:56px;height:56px;object-fit:contain;}
+.gopher-caption{font-size:0.8rem;color:var(--ink3);line-height:1.5;}
+.gopher-caption em{font-style:italic;color:var(--sage);}
+
+.about-prose p{font-size:0.92rem;color:var(--ink3);line-height:1.9;margin-bottom:0.9rem;}
+blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.1rem;
+  color:var(--ink2);border-left:3px solid var(--sage);
+  padding-left:1.2rem;margin:1.5rem 0;line-height:1.6;
+}
+blockquote cite{display:block;font-size:0.78rem;font-style:normal;color:var(--gold);margin-top:0.4rem;font-family:'Outfit',sans-serif;font-weight:600;}
+.edu-box{
+  background:var(--paper);border:1.5px solid var(--border);border-radius:16px;
+  padding:1.2rem 1.5rem;box-shadow:var(--shadow);margin-top:1rem;
+}
+.edu-inst{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--ink);}
+.edu-detail{font-size:0.78rem;color:var(--ink3);margin-top:0.2rem;}
+.interest-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.2rem;}
+.int-pill{
+  font-size:0.75rem;font-weight:600;
+  padding:0.35rem 0.9rem;border-radius:20px;
+  background:rgba(255,255,255,0.8);border:1.5px solid rgba(184,134,42,0.2);
+  color:var(--ink2);transition:all 0.2s;
+}
+.int-pill:hover{background:#fff;transform:translateY(-2px);box-shadow:var(--shadow);}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--cream2);position:relative;overflow:hidden;}
+#contact::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 300'%3E%3Cpath fill='%23c4ddc6' fill-opacity='0.18' d='M0,180 C240,100 480,260 720,160 C960,60 1200,220 1440,140 L1440,300 L0,300Z'/%3E%3C/svg%3E") bottom/cover no-repeat;
+}
+.contact-inner{
+  position:relative;z-index:2;
+  max-width:700px;margin:0 auto;text-align:center;
+}
+.contact-gopher{
+  width:120px;height:120px;object-fit:contain;
+  margin:0 auto 2rem;display:block;
+  animation:float 3.5s ease-in-out infinite;
+  filter:drop-shadow(0 8px 20px rgba(92,140,96,0.3));
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.contact-email{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,3.5vw,2.4rem);font-style:italic;
+  color:var(--ink);text-decoration:none;
+  border-bottom:2px solid var(--sage);padding-bottom:2px;
+  display:inline-block;margin-bottom:2rem;
+  transition:color 0.2s;
+}
+.contact-email:hover{color:var(--sage);}
+.contact-social{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--ink);color:rgba(250,246,239,0.55);
+  padding:2rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:0.75rem;
+}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--cream);}
+footer a{color:var(--sage2);text-decoration:none;}
+
+/* ─── REVEAL ─── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.rv.on{opacity:1;transform:none;}
+.rv-l{opacity:0;transform:translateX(-20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.rv-l.on{opacity:1;transform:none;}
+.rv-r{opacity:0;transform:translateX(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.rv-r.on{opacity:1;transform:none;}
+
+/* ─── MOBILE ─── */
+@media(max-width:900px){
+  nav{padding:0.8rem 1.5rem;}
+  .nav-links{display:none;}
+  #hero{padding:6rem 1.5rem 3rem;}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .hero-visual{max-width:360px;margin:0 auto;}
+  .sec-inner{padding:4rem 1.5rem;}
+  .exp-list::before{left:0;}
+  .exp-item{grid-template-columns:1fr;gap:0.5rem;}
+  .exp-meta{text-align:left;padding-right:0;padding-left:1rem;}
+  .exp-dot{left:0;}
+  .exp-content{padding-left:1rem;}
+  .about-grid{grid-template-columns:1fr;}
+  .ach-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;}
+}
+</style>
 </head>
-
 <body>
-  <nav>
-    <ul>
-      <li><a href="#top">HOME</a></li>
-      <li><a href="#project">PROJECTS</a></li>
-      <li><a href="#about">ABOUT</a></li>
-    </ul>
-  </nav>
 
-  <!-- Home -->
-  <section class="center">
-    <main>
-      <div class="img-info-container">
-        <div class="img-container">
-          <img width="80" height="80" src="./asset/img/gopher.gif" alt="pfp" />
-        </div>
-        <div class="info-container">
-          <div class="social-container">
-            <a href="https://github.com/Bittu96" target="_blank"><img width="24" height="24"
-                src="./asset/svg/github.svg" alt="github" /></a>
-            <a href="http://www.linkedin.com/in/mrudulkatla" target="_blank"><img width="24" height="24"
-                src="./asset/svg/linkedin.svg" alt="linkedin" /></a>
-          </div>
-          <h1>
-            Hi! <br />
-            I'm MRUDUL
-          </h1>
-        </div>
-        <div class="img-container">
-          <div class="empty-box"></div>
-        </div>
-      </div>
+<!-- CLOUDS -->
+<div class="cloud-layer" aria-hidden="true">
+  <div class="cloud warm c1"></div>
+  <div class="cloud cool c2"></div>
+  <div class="cloud warm c3"></div>
+  <div class="cloud cool c4"></div>
+</div>
 
-      <p class="user-bio">
-        I'm a coding enthusiast!
-        <br />
-        Passionate about crafting digital experiences and I'm mostly into backend development, architecture design and
-        little into frontend
-        <br />
-        <br />
-        Also interested in Art, Board
-        Games & Badminton
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">mrudul.<span>katla</span></a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Recognition</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="https://drive.google.com/file/d/1YQmpa0Vn86RplxZL3021qzwC_PpAEcAO/view" target="_blank" class="nav-cta">Resume ↗</a>
+</nav>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-hills" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#c4ddc6" fill-opacity="0.3" d="M0,100 C200,40 400,140 650,80 C900,20 1100,120 1300,70 C1380,50 1420,80 1440,60 L1440,160 L0,160Z"/>
+    <path fill="#84b088" fill-opacity="0.15" d="M0,130 C300,80 550,150 800,110 C1050,70 1250,140 1440,100 L1440,160 L0,160Z"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge rv">Senior Software Engineer · IIT Bhubaneswar Alumni</div>
+      <h1 class="rv">
+        <strong>Mrudul</strong><br>
+        <em>Katla</em>
+      </h1>
+      <p class="hero-role rv">Backend Architect & Systems Engineer</p>
+      <p class="hero-desc rv">
+        5+ years designing production-grade distributed systems that serve <strong>20M+ customers</strong> and handle <strong>10,000+ TPS</strong>. I architect solutions at the intersection of scale, reliability, and clean engineering — with a particular love for Go.
       </p>
-      <!-- Quote  -->
-      <div class="quote-container">
-        <p>
-          <i>
-            “The greatest glory in living lies not in never falling, but in
-            rising every time we fall.”
-            <br />
-            – Nelson Mandela
-          </i>
-        </p>
+      <div class="hero-chips rv">
+        <span class="chip-pill cp-go">Go / Golang</span>
+        <span class="chip-pill cp-arch">Microservices</span>
+        <span class="chip-pill cp-kafka">Kafka · gRPC</span>
+        <span class="chip-pill cp-cloud">AWS · Kubernetes</span>
+        <span class="chip-pill cp-db">PostgreSQL · Redis</span>
+        <span class="chip-pill cp-arch">System Design</span>
       </div>
-    </main>
-  </section>
-  <!-- End of Home -->
-
-  <!-- Start of Project -->
-  <section class="center">
-    <div id="project">
-      <h2 class="">PROJECTS</h2>
-      <!-- project container/ grid -->
-      <div class="project-container">
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-            <a href=https://github.com/Bittu96/TicTacToe target="_blank">
-              <h3>TicTacToe</h3>
-            </a>
-            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
-                alt="external-link" /></a>
-          </div>
-          <p class="repository-description">
-            Your favorite classic game
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Java</span>
-          </div>
-        </div>
-        <!-- Repo End -->
-
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-            <a href=https://github.com/Bittu96/youtubeAnalytics target="_blank">
-              <h3>youtubeAnalytics</h3>
-            </a>
-            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
-                alt="external-link" /></a>
-          </div>
-          <p class="repository-description">
-            Check your covid jab availability in few clicks
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Go</span>
-            <span class="language-used">Gin</span>
-            <span class="language-used">Graphs</span>
-          </div>
-        </div>
-        <!-- Repo End -->
-
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-            <a href=https://github.com/Bittu96?tab=repositories&q=YourJabNotifier target="_blank">
-              <h3>YourJabNotifier</h3>
-            </a>
-            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
-                alt="external-link" /></a>
-          </div>
-          <p class="repository-description">
-            Check your covid jab availability in few clicks
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Node.js</span>
-            <span class="language-used">React.js</span>
-            <span class="language-used">AWS</span>
-          </div>
-        </div>
-        <!-- Repo End -->
-
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-            <a href=https://github.com/Bittu96/chatterbox target="_blank">
-              <h3>chatterBox</h3>
-            </a>
-            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
-                alt="external-link" /></a>
-          </div>
-          <p class="repository-description">
-            simple 1v1 chat application.
-            <br />
-            login -> add friend -> chat chat chat!
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Go</span>
-            <span class="language-used">Next.js</span>
-            <span class="language-used">Tailwind</span>
-            <span class="language-used">Websockets</span>
-          </div>
-        </div>
-        <!-- Repo End -->
-
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-            <a href=https://github.com/Bittu96/easypool target="_blank">
-              <h3>easypool</h3>
-            </a>
-            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
-                alt="external-link" /></a>
-          </div>
-          <p class="repository-description">
-            Concurrent worker pools made easy (my open source work)
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Go</span>
-            <span class="language-used">Concurrency</span>
-          </div>
-        </div>
-        <!-- Repo End -->
-
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-            <a href=https://github.com/Bittu96/BlockchainTrials target="_blank">
-              <h3>BlockchainTrials</h3>
-            </a>
-            <a target="_blank"><img width="16" height="16" src="./asset/svg/external-link.svg"
-                alt="external-link" /></a>
-          </div>
-          <p class="repository-description">
-            experimenting with block chain
-            <br />
-            Blockchain golang package (my open source work)
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Go</span>
-            <span class="language-used">Blockchain</span>
-          </div>
-        </div>
-        <!-- Repo End -->
-
-        <!-- Repo -->
-        <div class="repository-container">
-          <div class="repository-head">
-          </div>
-          <p class="repository-description">
-            Find more in my repo...
-          </p>
-          <div class="repository-language-used-container">
-            <span class="language-used">Click</span>
-            <span class="language-used">Link</span>
-            <span class="language-used">below</span>
-          </div>
-        </div>
-        <!-- Repo End -->
+      <div class="hero-btns rv">
+        <a href="#experience" class="btn-fill">View Experience ↓</a>
+        <a href="#contact" class="btn-line">Get in Touch</a>
       </div>
-
-      <!-- To github repos -->
-      <div class="repository-container more-repo">
-        more at
-        <a href="https://github.com/Bittu96?tab=repositories" target="_blank">GITHUB <img
-            src="./asset/svg/external-link.svg" alt="" /></a>
-      </div>
-      <!-- To github repos End-->
     </div>
-  </section>
-  <!-- End of Project -->
 
-  <!-- About -->
-  <div class="center">
-    <div id="about">
-      <!-- Image  -->
-      <div class="about-img-container">
-        <img width="180" height="180" src="./asset/img/me.jpg" alt="pfp" />
+    <div class="hero-visual rv-r">
+      <div class="hero-card">
+        <div class="photo-ring">
+          <img src="https://bittu96.github.io/b2space/asset/img/me.jpg" alt="Mrudul Katla" />
+        </div>
+        <div class="gopher-row">
+          <img src="https://bittu96.github.io/b2space/asset/img/gopher.gif" alt="Go Gopher" />
+          <div class="gopher-text">
+            <strong>Go enthusiast 🐹</strong>
+            Goroutines make me happy. Kafka pipelines make me calmer.
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-num">5+</span>
+            <div class="hstat-lbl">Years</div>
+          </div>
+          <div class="hstat">
+            <span class="hstat-num">20M</span>
+            <div class="hstat-lbl">Customers</div>
+          </div>
+          <div class="hstat">
+            <span class="hstat-num">10k</span>
+            <div class="hstat-lbl">TPS Peak</div>
+          </div>
+        </div>
       </div>
-
-      <!-- Name -->
-      <h2 class="gradient">Mrudul Katla</h2>
-
-      <!-- social media container -->
-      <ul class="about-social-container">
-        <li>
-          <img src="./asset/svg/github.svg" alt="Github" />
-          <a href="https://github.com/Bittu96">Github</a>
-        </li>
-
-        <li>
-          <img src="./asset/svg/mail.svg" alt="LinkedIn" />
-          <a href="mailto:mrudulkatla@gmail.com">Mail</a>
-        </li>
-
-        <li>
-          <img src="./asset/svg/linkedin.svg" alt="LinkedIn" />
-          <a href="http://www.linkedin.com/in/mrudulkatla">LinkedIn</a>
-        </li>
-      </ul>
-      <!-- long bio -->
-      <p>
-        Coding is my therapy.<br /><br />
-        Let's chat about how I can help you achieve your digital goals.
-      </p>
-
-      <!-- Resume -->
-      <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <a href="https://drive.google.com/file/d/1YQmpa0Vn86RplxZL3021qzwC_PpAEcAO/view" download="resume">
-        <button class="btn"><i class="fa fa-download"></i> Resume</button>
-      </a>
     </div>
   </div>
+</section>
 
-  <footer>
-  </footer>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">SDE II @ Tanla Platforms</span>
+    <span class="ticker-item">10,000+ TPS Systems</span>
+    <span class="ticker-item">20M+ End Customers</span>
+    <span class="ticker-item">Kafka · gRPC · Microservices</span>
+    <span class="ticker-item">AWS · Kubernetes · Docker</span>
+    <span class="ticker-item">Go · Python · JavaScript</span>
+    <span class="ticker-item">IIT Bhubaneswar Alumni</span>
+    <span class="ticker-item">100+ International Citations</span>
+    <span class="ticker-item">Open Source Contributor</span>
+    <span class="ticker-item">SDE II @ Tanla Platforms</span>
+    <span class="ticker-item">10,000+ TPS Systems</span>
+    <span class="ticker-item">20M+ End Customers</span>
+    <span class="ticker-item">Kafka · gRPC · Microservices</span>
+    <span class="ticker-item">AWS · Kubernetes · Docker</span>
+    <span class="ticker-item">Go · Python · JavaScript</span>
+    <span class="ticker-item">IIT Bhubaneswar Alumni</span>
+    <span class="ticker-item">100+ International Citations</span>
+    <span class="ticker-item">Open Source Contributor</span>
+  </div>
+</div>
 
-  <script type="module" src="./script/event-effect.js"></script>
+<!-- ══════════════════════ EXPERIENCE ══════════════════════ -->
+<div class="wave"><svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff9f2" d="M0,25 C360,50 720,0 1080,25 C1260,38 1380,15 1440,25 L1440,50 L0,50Z"/></svg></div>
+
+<section id="experience" class="sec">
+  <div class="sec-inner">
+    <div class="sec-label rv">Career</div>
+    <h2 class="sec-h rv">Work <em>Experience</em></h2>
+    <p class="sec-sub rv">A decade-long journey of building things that matter — from robotics research at IIT to high-throughput telecom infrastructure serving millions.</p>
+
+    <div class="exp-list">
+
+      <!-- Tanla -->
+      <div class="exp-item rv">
+        <div class="exp-meta">
+          <span class="exp-period">Mar 2025 – Present</span>
+          <div class="exp-co">Tanla Platforms</div>
+          <div class="exp-loc">Hyderabad</div>
+          <div class="exp-dot"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">SDE II <span class="exp-badge">Current</span></div>
+          <ul class="exp-bullets">
+            <li>Owned end-to-end design and delivery of a digital consent platform for enterprise telecom customers (VIL, BSNL) — serving <strong>10,000+ TPS</strong> in production.</li>
+            <li>Architected scalable microservices with distributed caching, idempotent processing, retry strategies, and resilient Kafka-based messaging pipelines for <strong>20M end customers</strong>.</li>
+            <li>Applied circuit breaker, saga, and CQRS patterns to deliver highly maintainable backend systems on tight regulatory timelines.</li>
+            <li>Collaborated with global cross-functional partners (TRAI, telecom operators, RBI-regulated banks) to shape architecture and align on compliance requirements.</li>
+            <li>Led production pilot with <strong>16 enterprise banking clients</strong> under direct regulatory oversight — validated scalability and performance at scale.</li>
+          </ul>
+          <div class="exp-highlights">
+            <span class="exp-tag">Go</span><span class="exp-tag">Kafka</span><span class="exp-tag sky">gRPC</span><span class="exp-tag sky">Microservices</span><span class="exp-tag gold">CQRS</span><span class="exp-tag gold">Circuit Breaker</span><span class="exp-tag rose">TRAI Compliance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jukshio -->
+      <div class="exp-item rv">
+        <div class="exp-meta">
+          <span class="exp-period">Feb 2023 – Feb 2025</span>
+          <div class="exp-co">Jukshio Innovation</div>
+          <div class="exp-loc">Hyderabad</div>
+          <div class="exp-dot"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Backend Developer</div>
+          <ul class="exp-bullets">
+            <li>Designed RESTful APIs for fraud detection supporting <strong>250 TPS</strong> with high reliability for enterprise identity verification clients.</li>
+            <li>Built backend services and SDKs for a Freemium dashboard enabling API customization and user quota management — reducing enterprise integration time.</li>
+            <li>Architected a scalable document redaction microservice processing <strong>~3 million documents</strong> with efficient data storage pipelines.</li>
+            <li>Drove <strong>~10% KYC microservice performance improvement</strong> through systematic profiling and load-tested optimization.</li>
+            <li>Championed code quality via structured reviews, reducing code redundancy by <strong>~19%</strong> (SonarQube) and accelerating team onboarding.</li>
+          </ul>
+          <div class="exp-highlights">
+            <span class="exp-tag">Go</span><span class="exp-tag sky">REST APIs</span><span class="exp-tag sky">Fraud Detection</span><span class="exp-tag gold">KYC</span><span class="exp-tag gold">SonarQube</span><span class="exp-tag">Redis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Siply -->
+      <div class="exp-item rv">
+        <div class="exp-meta">
+          <span class="exp-period">May 2021 – Feb 2023</span>
+          <div class="exp-co">Siply Services</div>
+          <div class="exp-loc">Bangalore</div>
+          <div class="exp-dot"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Software Engineer</div>
+          <ul class="exp-bullets">
+            <li>Backend lead for Chits product — owned full SDLC from architecture to CI/CD and production deployment on AWS, taking the product from <strong>0 to launch</strong>.</li>
+            <li>Built production APIs for mutual funds and chits — covering user KYC, fund management, and CAMSPay payment gateway integration.</li>
+            <li>Achieved <strong>sub-1.5s API response times</strong> at scale via query optimization and Redis caching — improving UX and reducing infrastructure costs.</li>
+            <li>Designed a multi-channel communication service (SMS, push, WhatsApp, email) that measurably improved user engagement and conversion.</li>
+          </ul>
+          <div class="exp-highlights">
+            <span class="exp-tag">Node.js</span><span class="exp-tag sky">AWS</span><span class="exp-tag sky">CI/CD</span><span class="exp-tag gold">Redis</span><span class="exp-tag gold">FinTech</span><span class="exp-tag">KYC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- IIT -->
+      <div class="exp-item rv">
+        <div class="exp-meta">
+          <span class="exp-period">Aug 2019 – Aug 2020</span>
+          <div class="exp-co">IIT Bhubaneswar</div>
+          <div class="exp-loc">Bhubaneswar</div>
+          <div class="exp-dot"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-title">Junior Research Fellow</div>
+          <ul class="exp-bullets">
+            <li>Contributed to simulation and development of a lower limb exoskeleton for rehabilitation as part of a <strong>DST-funded government research project</strong>.</li>
+            <li>Worked across Python, C++, XML, ROS, and Linux on robotic systems simulation, which yielded <strong>100+ international academic citations</strong>.</li>
+          </ul>
+          <div class="exp-highlights">
+            <span class="exp-tag">Python</span><span class="exp-tag sky">C++</span><span class="exp-tag sky">ROS</span><span class="exp-tag gold">Research</span><span class="exp-tag rose">DST Funded</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SKILLS ══════════════════════ -->
+<div class="wave" style="background:var(--paper);"><svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#f2ebe0" d="M0,15 C480,50 960,0 1440,20 L1440,50 L0,50Z"/></svg></div>
+
+<section id="skills" class="sec">
+  <div class="sec-inner">
+    <div class="sec-label rv">Craft</div>
+    <h2 class="sec-h rv">Technical <em>Skills</em></h2>
+    <p class="sec-sub rv">A curated stack built over five years of production engineering — from high-throughput messaging to cloud-native deployments.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card s-go rv">
+        <span class="sk-icon">🐹</span>
+        <div class="sk-name">Go / Golang</div>
+        <p class="sk-desc">Primary language. Goroutines, channels, interfaces — I've built OSS libraries, high-throughput APIs, and distributed microservices in Go.</p>
+        <div class="sk-tags"><span class="sk-tag">Gin</span><span class="sk-tag">Goroutines</span><span class="sk-tag">Channels</span><span class="sk-tag">CLI</span><span class="sk-tag">gRPC</span></div>
+      </div>
+      <div class="skill-card s-backend rv">
+        <span class="sk-icon">⚙️</span>
+        <div class="sk-name">Backend & APIs</div>
+        <p class="sk-desc">REST, gRPC, WebSockets — designing APIs that are reliable under load, easy to integrate, and a pleasure to maintain.</p>
+        <div class="sk-tags"><span class="sk-tag">REST</span><span class="sk-tag">gRPC</span><span class="sk-tag">WebSockets</span><span class="sk-tag">Django</span><span class="sk-tag">MERN</span></div>
+      </div>
+      <div class="skill-card s-msg rv">
+        <span class="sk-icon">📨</span>
+        <div class="sk-name">Messaging & Streaming</div>
+        <p class="sk-desc">Event-driven architecture at scale — Kafka pipelines, resilient retry strategies, and idempotent processing for mission-critical flows.</p>
+        <div class="sk-tags"><span class="sk-tag">Kafka</span><span class="sk-tag">RabbitMQ</span><span class="sk-tag">AWS SQS</span><span class="sk-tag">Event-Driven</span></div>
+      </div>
+      <div class="skill-card s-data rv">
+        <span class="sk-icon">🗄️</span>
+        <div class="sk-name">Databases</div>
+        <p class="sk-desc">Relational, NoSQL, time-series, and distributed caches — choosing the right data store for the problem, then tuning it for performance.</p>
+        <div class="sk-tags"><span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span><span class="sk-tag">Redis</span><span class="sk-tag">DynamoDB</span><span class="sk-tag">ClickHouse</span><span class="sk-tag">Aerospike</span></div>
+      </div>
+      <div class="skill-card s-cloud rv">
+        <span class="sk-icon">☁️</span>
+        <div class="sk-name">Cloud & DevOps</div>
+        <p class="sk-desc">Shipping to production confidently — containerized workloads, CI/CD pipelines, serverless functions, and managed cloud infrastructure.</p>
+        <div class="sk-tags"><span class="sk-tag">AWS</span><span class="sk-tag">Azure</span><span class="sk-tag">Kubernetes</span><span class="sk-tag">Docker</span><span class="sk-tag">CI/CD</span></div>
+      </div>
+      <div class="skill-card s-arch rv">
+        <span class="sk-icon">🏛️</span>
+        <div class="sk-name">Architecture & Design</div>
+        <p class="sk-desc">Systems thinking — circuit breaker, saga, CQRS, and event-driven patterns applied to build resilient, scalable distributed systems.</p>
+        <div class="sk-tags"><span class="sk-tag">Microservices</span><span class="sk-tag">CQRS</span><span class="sk-tag">Saga</span><span class="sk-tag">SOLID</span><span class="sk-tag">System Design</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PROJECTS ══════════════════════ -->
+<div class="wave" style="background:var(--cream2);"><svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff9f2" d="M0,30 C360,0 720,50 1080,20 C1260,8 1380,38 1440,25 L1440,50 L0,50Z"/></svg></div>
+
+<section id="projects" class="sec">
+  <div class="sec-inner">
+    <div class="sec-label rv">Portfolio</div>
+    <h2 class="sec-h rv">Selected <em>Projects</em></h2>
+    <p class="sec-sub rv">Personal explorations, open source tools, and full-stack products — each one a lesson learned and a problem solved.</p>
+
+    <div class="projects-grid">
+
+      <!-- chatterBox -->
+      <a class="proj-card rv" href="https://github.com/Bittu96/chatterbox" target="_blank">
+        <div class="proj-visual">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ddeef8"/><stop offset="100%" stop-color="#b8d4e8"/></linearGradient>
+            </defs>
+            <rect width="400" height="200" fill="url(#g1)"/>
+            <!-- chat bubbles scene -->
+            <rect x="30" y="40" width="160" height="40" rx="20" fill="#fff" fill-opacity="0.9"/>
+            <polygon points="50,80 70,80 55,95" fill="#fff" fill-opacity="0.9"/>
+            <rect x="40" y="52" width="100" height="8" rx="4" fill="#a0c4d8"/>
+            <rect x="40" y="64" width="70" height="6" rx="3" fill="#c8dff0"/>
+            <rect x="210" y="80" width="160" height="40" rx="20" fill="#5c8c60" fill-opacity="0.85"/>
+            <polygon points="350,120 330,120 345,135" fill="#5c8c60" fill-opacity="0.85"/>
+            <rect x="220" y="92" width="100" height="8" rx="4" fill="#c4ddc6"/>
+            <rect x="220" y="104" width="70" height="6" rx="3" fill="#a8c8aa"/>
+            <rect x="30" y="130" width="130" height="35" rx="17" fill="#fff" fill-opacity="0.8"/>
+            <rect x="40" y="141" width="80" height="7" rx="3.5" fill="#a0c4d8"/>
+            <rect x="40" y="152" width="50" height="5" rx="2.5" fill="#c8dff0"/>
+            <!-- wifi signal -->
+            <circle cx="340" cy="40" r="5" fill="#5c8c60" fill-opacity="0.6"/>
+            <path d="M325,32 Q340,20 355,32" fill="none" stroke="#5c8c60" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M318,25 Q340,10 362,25" fill="none" stroke="#5c8c60" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">01 · Real-time Chat</div>
+          <div class="proj-name">chatterBox <span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">A complete 1v1 chat application powered by WebSockets for truly instant, zero-latency messaging. Built with Go on the backend and Next.js on the frontend.</p>
+          <div class="proj-tags">
+            <span class="ptag pt-go">Go</span><span class="ptag pt-react">Next.js</span><span class="ptag pt-ws">WebSockets</span><span class="ptag pt-react">Tailwind</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- easypool -->
+      <a class="proj-card rv" href="https://github.com/Bittu96/easypool" target="_blank">
+        <div class="proj-visual">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e8f2e8"/><stop offset="100%" stop-color="#c4ddc6"/></linearGradient>
+            </defs>
+            <rect width="400" height="200" fill="url(#g2)"/>
+            <!-- goroutine pool visualization -->
+            <rect x="20" y="30" width="360" height="30" rx="8" fill="#fff" fill-opacity="0.5"/>
+            <rect x="28" y="38" width="50" height="14" rx="4" fill="#5c8c60" fill-opacity="0.8"/>
+            <rect x="84" y="38" width="50" height="14" rx="4" fill="#5c8c60" fill-opacity="0.6"/>
+            <rect x="140" y="38" width="50" height="14" rx="4" fill="#5c8c60" fill-opacity="0.8"/>
+            <rect x="196" y="38" width="50" height="14" rx="4" fill="#84b088" fill-opacity="0.5"/>
+            <rect x="252" y="38" width="50" height="14" rx="4" fill="#5c8c60" fill-opacity="0.7"/>
+            <rect x="308" y="38" width="50" height="14" rx="4" fill="#84b088" fill-opacity="0.4"/>
+            <!-- arrows down -->
+            <line x1="53" y1="68" x2="53" y2="85" stroke="#5c8c60" stroke-width="1.5" stroke-opacity="0.6"/>
+            <polygon points="48,85 53,95 58,85" fill="#5c8c60" fill-opacity="0.6"/>
+            <line x1="165" y1="68" x2="165" y2="85" stroke="#5c8c60" stroke-width="1.5" stroke-opacity="0.6"/>
+            <polygon points="160,85 165,95 170,85" fill="#5c8c60" fill-opacity="0.6"/>
+            <line x1="277" y1="68" x2="277" y2="85" stroke="#5c8c60" stroke-width="1.5" stroke-opacity="0.6"/>
+            <polygon points="272,85 277,95 282,85" fill="#5c8c60" fill-opacity="0.6"/>
+            <!-- worker boxes -->
+            <rect x="25" y="95" width="70" height="55" rx="8" fill="#fff" fill-opacity="0.8"/>
+            <text x="60" y="118" text-anchor="middle" fill="#5c8c60" font-size="11" font-weight="600" font-family="monospace">worker</text>
+            <text x="60" y="132" text-anchor="middle" fill="#84b088" font-size="10" font-family="monospace">#1</text>
+            <circle cx="60" cy="143" r="4" fill="#5c8c60" fill-opacity="0.7"/>
+            <rect x="140" y="95" width="70" height="55" rx="8" fill="#fff" fill-opacity="0.8"/>
+            <text x="175" y="118" text-anchor="middle" fill="#5c8c60" font-size="11" font-weight="600" font-family="monospace">worker</text>
+            <text x="175" y="132" text-anchor="middle" fill="#84b088" font-size="10" font-family="monospace">#2</text>
+            <circle cx="175" cy="143" r="4" fill="#5c8c60" fill-opacity="0.7"/>
+            <rect x="255" y="95" width="70" height="55" rx="8" fill="#fff" fill-opacity="0.8"/>
+            <text x="290" y="118" text-anchor="middle" fill="#5c8c60" font-size="11" font-weight="600" font-family="monospace">worker</text>
+            <text x="290" y="132" text-anchor="middle" fill="#84b088" font-size="10" font-family="monospace">#3</text>
+            <circle cx="290" cy="143" r="4" fill="#5c8c60" fill-opacity="0.7"/>
+            <!-- OSS badge -->
+            <rect x="300" y="165" width="90" height="22" rx="11" fill="#5c8c60" fill-opacity="0.8"/>
+            <text x="345" y="181" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="sans-serif">Open Source</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">02 · Open Source Library 🌿</div>
+          <div class="proj-name">easypool <span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">A Go library making concurrent worker pool management dead simple. Managing goroutine pools without boilerplate — the tool I wished existed before I built it.</p>
+          <div class="proj-tags">
+            <span class="ptag pt-go">Go</span><span class="ptag pt-oss">Open Source</span><span class="ptag pt-ws">Concurrency</span><span class="ptag pt-go">Goroutines</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- youtubeAnalytics -->
+      <a class="proj-card rv" href="https://github.com/Bittu96/youtubeAnalytics" target="_blank">
+        <div class="proj-visual">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff5e0"/><stop offset="100%" stop-color="#f0d898"/></linearGradient>
+            </defs>
+            <rect width="400" height="200" fill="url(#g3)"/>
+            <!-- bar chart -->
+            <rect x="40" y="160" width="400" height="1.5" fill="#b8862a" fill-opacity="0.2"/>
+            <rect x="55" y="110" width="32" height="50" rx="4" fill="#b8862a" fill-opacity="0.55"/>
+            <rect x="100" y="75" width="32" height="85" rx="4" fill="#b8862a" fill-opacity="0.7"/>
+            <rect x="145" y="95" width="32" height="65" rx="4" fill="#b8862a" fill-opacity="0.6"/>
+            <rect x="190" y="55" width="32" height="105" rx="4" fill="#b8862a" fill-opacity="0.85"/>
+            <rect x="235" y="80" width="32" height="80" rx="4" fill="#b8862a" fill-opacity="0.65"/>
+            <rect x="280" y="40" width="32" height="120" rx="4" fill="#b8862a" fill-opacity="0.9"/>
+            <rect x="325" y="65" width="32" height="95" rx="4" fill="#b8862a" fill-opacity="0.75"/>
+            <!-- line overlay -->
+            <polyline points="71,110 116,75 161,95 206,55 251,80 296,40 341,65" fill="none" stroke="#5c8c60" stroke-width="2" stroke-opacity="0.7" stroke-linejoin="round"/>
+            <circle cx="71" cy="110" r="4" fill="#5c8c60" fill-opacity="0.8"/>
+            <circle cx="116" cy="75" r="4" fill="#5c8c60" fill-opacity="0.8"/>
+            <circle cx="206" cy="55" r="4" fill="#5c8c60"/>
+            <circle cx="296" cy="40" r="5" fill="#5c8c60"/>
+            <!-- label -->
+            <rect x="270" y="12" width="110" height="22" rx="11" fill="#b8862a" fill-opacity="0.15" stroke="#b8862a" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="325" y="27" text-anchor="middle" fill="#b8862a" font-size="10" font-weight="700" font-family="sans-serif">YouTube Analytics</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">03 · Data Dashboard</div>
+          <div class="proj-name">youtubeAnalytics <span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">YouTube data analytics tool with interactive graphs and visual insights. Feed it channel data, get back beautiful, actionable visualisations. Built with Go + Gin.</p>
+          <div class="proj-tags">
+            <span class="ptag pt-go">Go</span><span class="ptag pt-go">Gin</span><span class="ptag pt-node">Graphs</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- YourJabNotifier -->
+      <a class="proj-card rv" href="https://github.com/Bittu96?tab=repositories&q=YourJabNotifier" target="_blank">
+        <div class="proj-visual">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5d5c8"/><stop offset="100%" stop-color="#e8b4a0"/></linearGradient>
+            </defs>
+            <rect width="400" height="200" fill="url(#g4)"/>
+            <!-- phone mockup -->
+            <rect x="145" y="20" width="110" height="165" rx="16" fill="#fff" fill-opacity="0.85"/>
+            <rect x="155" y="32" width="90" height="140" rx="8" fill="#faf6ef"/>
+            <!-- notification card on phone -->
+            <rect x="162" y="45" width="76" height="48" rx="6" fill="#fff"/>
+            <rect x="168" y="52" width="30" height="6" rx="3" fill="#b86858" fill-opacity="0.6"/>
+            <rect x="168" y="62" width="55" height="5" rx="2.5" fill="#9a8870" fill-opacity="0.4"/>
+            <rect x="168" y="71" width="40" height="5" rx="2.5" fill="#9a8870" fill-opacity="0.3"/>
+            <rect x="168" y="82" width="22" height="8" rx="4" fill="#5c8c60"/>
+            <text x="179" y="89" text-anchor="middle" fill="#fff" font-size="6" font-weight="700" font-family="sans-serif">BOOK</text>
+            <!-- AWS cloud icon -->
+            <ellipse cx="310" cy="65" rx="45" ry="28" fill="#fff" fill-opacity="0.7"/>
+            <ellipse cx="290" cy="75" rx="30" ry="18" fill="#fff" fill-opacity="0.7"/>
+            <ellipse cx="335" cy="72" rx="28" ry="16" fill="#fff" fill-opacity="0.7"/>
+            <text x="310" y="72" text-anchor="middle" fill="#c06000" font-size="10" font-weight="700" font-family="sans-serif">AWS</text>
+            <!-- connection lines -->
+            <line x1="255" y1="100" x2="290" y2="85" stroke="#b86858" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="4,3"/>
+            <!-- badge -->
+            <rect x="20" y="80" width="100" height="28" rx="14" fill="#b86858" fill-opacity="0.15" stroke="#b86858" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="70" y="98" text-anchor="middle" fill="#b86858" font-size="10" font-weight="700" font-family="sans-serif">Civic Tech 🏥</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">04 · Civic Tech</div>
+          <div class="proj-name">YourJabNotifier <span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Built during the COVID vaccine rollout to help people find and book slots. A full-stack app (React + Node.js) deployed on AWS that helped real people get vaccinated faster.</p>
+          <div class="proj-tags">
+            <span class="ptag pt-node">Node.js</span><span class="ptag pt-react">React.js</span><span class="ptag pt-aws">AWS</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- BlockchainTrials -->
+      <a class="proj-card rv" href="https://github.com/Bittu96/BlockchainTrials" target="_blank">
+        <div class="proj-visual">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0e8f8"/><stop offset="100%" stop-color="#d8c8ec"/></linearGradient>
+            </defs>
+            <rect width="400" height="200" fill="url(#g5)"/>
+            <!-- blockchain blocks -->
+            <rect x="20" y="75" width="75" height="55" rx="8" fill="#fff" fill-opacity="0.85"/>
+            <rect x="27" y="84" width="40" height="6" rx="3" fill="#7050a0" fill-opacity="0.5"/>
+            <rect x="27" y="94" width="55" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <rect x="27" y="103" width="45" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <rect x="27" y="112" width="30" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <!-- chain link -->
+            <rect x="95" y="97" width="22" height="10" rx="5" fill="#7050a0" fill-opacity="0.35"/>
+            <rect x="163" y="97" width="22" height="10" rx="5" fill="#7050a0" fill-opacity="0.35"/>
+            <rect x="231" y="97" width="22" height="10" rx="5" fill="#7050a0" fill-opacity="0.35"/>
+            <rect x="299" y="97" width="22" height="10" rx="5" fill="#7050a0" fill-opacity="0.35"/>
+            <!-- block 2 -->
+            <rect x="118" y="75" width="75" height="55" rx="8" fill="#fff" fill-opacity="0.85"/>
+            <rect x="125" y="84" width="40" height="6" rx="3" fill="#7050a0" fill-opacity="0.5"/>
+            <rect x="125" y="94" width="55" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <rect x="125" y="103" width="45" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <rect x="125" y="112" width="30" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <!-- block 3 -->
+            <rect x="216" y="75" width="75" height="55" rx="8" fill="#fff" fill-opacity="0.85"/>
+            <rect x="223" y="84" width="40" height="6" rx="3" fill="#7050a0" fill-opacity="0.5"/>
+            <rect x="223" y="94" width="55" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <rect x="223" y="103" width="45" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <rect x="223" y="112" width="30" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.35"/>
+            <!-- block 4 partial -->
+            <rect x="314" y="75" width="75" height="55" rx="8" fill="#fff" fill-opacity="0.7"/>
+            <rect x="321" y="84" width="40" height="6" rx="3" fill="#7050a0" fill-opacity="0.4"/>
+            <rect x="321" y="94" width="55" height="5" rx="2.5" fill="#9a80b8" fill-opacity="0.25"/>
+            <!-- OSS label -->
+            <rect x="15" y="150" width="90" height="22" rx="11" fill="#7050a0" fill-opacity="0.12" stroke="#7050a0" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="60" y="165" text-anchor="middle" fill="#7050a0" font-size="10" font-weight="700" font-family="sans-serif">Open Source</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">05 · Open Source · Blockchain 🌿</div>
+          <div class="proj-name">BlockchainTrials <span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Building a blockchain from scratch in Go to understand the fundamentals deeply. An open source package for blockchain primitives — learning by doing, then sharing openly.</p>
+          <div class="proj-tags">
+            <span class="ptag pt-go">Go</span><span class="ptag pt-oss">Open Source</span><span class="ptag pt-kafka">Blockchain</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TicTacToe -->
+      <a class="proj-card rv" href="https://github.com/Bittu96/TicTacToe" target="_blank">
+        <div class="proj-visual">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fdf5d0"/><stop offset="100%" stop-color="#f5e890"/></linearGradient>
+            </defs>
+            <rect width="400" height="200" fill="url(#g6)"/>
+            <!-- tic tac toe grid centered -->
+            <line x1="145" y1="40" x2="145" y2="165" stroke="#b8862a" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+            <line x1="205" y1="40" x2="205" y2="165" stroke="#b8862a" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+            <line x1="90" y1="90" x2="260" y2="90" stroke="#b8862a" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+            <line x1="90" y1="140" x2="260" y2="140" stroke="#b8862a" stroke-width="3" stroke-opacity="0.5" stroke-linecap="round"/>
+            <!-- X marks -->
+            <line x1="103" y1="53" x2="130" y2="78" stroke="#b86858" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8"/>
+            <line x1="130" y1="53" x2="103" y2="78" stroke="#b86858" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8"/>
+            <line x1="163" y1="103" x2="190" y2="128" stroke="#b86858" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8"/>
+            <line x1="190" y1="103" x2="163" y2="128" stroke="#b86858" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8"/>
+            <!-- O marks -->
+            <circle cx="232" cy="65" r="18" fill="none" stroke="#5c8c60" stroke-width="3" stroke-opacity="0.8"/>
+            <circle cx="117" cy="115" r="18" fill="none" stroke="#5c8c60" stroke-width="3" stroke-opacity="0.8"/>
+            <!-- winning line -->
+            <line x1="232" y1="47" x2="232" y2="163" stroke="#5c8c60" stroke-width="2.5" stroke-opacity="0.4" stroke-dasharray="6,3"/>
+            <!-- Java badge -->
+            <rect x="280" y="80" width="100" height="40" rx="10" fill="#fff" fill-opacity="0.8"/>
+            <text x="330" y="96" text-anchor="middle" fill="#b86858" font-size="11" font-weight="700" font-family="sans-serif">Java OOP</text>
+            <text x="330" y="111" text-anchor="middle" fill="#9a8870" font-size="9" font-family="sans-serif">Origin Story</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">06 · Where It All Began</div>
+          <div class="proj-name">TicTacToe <span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Every engineer has an origin story. Mine started with writing the cleanest, most satisfying TicTacToe in Java I could manage. The OOP foundations here still guide how I think.</p>
+          <div class="proj-tags">
+            <span class="ptag pt-java">Java</span><span class="ptag pt-java">OOP</span><span class="ptag pt-node">Algorithms</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="rv" style="text-align:center;margin-top:3rem;">
+      <a href="https://github.com/Bittu96?tab=repositories" target="_blank" class="btn-line">View all on GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ ACHIEVEMENTS ══════════════════════ -->
+<div class="wave" style="background:var(--paper);"><svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#f2ebe0" d="M0,20 C480,55 960,0 1440,30 L1440,50 L0,50Z"/></svg></div>
+
+<section id="achievements" class="sec">
+  <div class="sec-inner">
+    <div class="sec-label rv">Recognition</div>
+    <h2 class="sec-h rv">Achievements & <em>Publications</em></h2>
+    <p class="sec-sub rv">Work that extended beyond code — into research, community, and professional recognition.</p>
+
+    <div class="ach-grid">
+      <div class="ach-card rv">
+        <div class="ach-icon">📚</div>
+        <div>
+          <div class="ach-title">100+ International Citations</div>
+          <p class="ach-desc">Research on biped navigation algorithms published in peer-reviewed Springer and Elsevier journals — cited by researchers internationally. Work conducted during IIT Bhubaneswar fellowship.</p>
+        </div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-icon">⭐</div>
+        <div>
+          <div class="ach-title">HackerRank 5-Star Badges</div>
+          <p class="ach-desc">Achieved 5-star rating in both Problem Solving and Python on HackerRank — demonstrating strong algorithmic thinking and language proficiency.</p>
+        </div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-icon">🏛️</div>
+        <div>
+          <div class="ach-title">IIT Bhubaneswar — B.Tech</div>
+          <p class="ach-desc">B.Tech in Mechanical Engineering from IIT Bhubaneswar (2015–2019) — where an engineer's structured thinking meets a programmer's curiosity.</p>
+        </div>
+      </div>
+      <div class="ach-card rv">
+        <div class="ach-icon">🔬</div>
+        <div>
+          <div class="ach-title">DST-Funded Research Project</div>
+          <p class="ach-desc">Core contributor on a Department of Science & Technology funded rehabilitation robotics project — lower limb exoskeleton simulation using ROS, Python, and C++.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+<div class="wave" style="background:var(--cream2);"><svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#ddeef8" d="M0,35 C360,5 720,50 1080,18 C1260,5 1380,40 1440,28 L1440,50 L0,50Z"/></svg></div>
+
+<section id="about" class="sec">
+  <div class="sec-inner">
+    <div class="about-grid">
+      <div class="about-left rv-l">
+        <div class="about-photo-frame">
+          <img src="https://bittu96.github.io/b2space/asset/img/me.jpg" alt="Mrudul Katla" />
+        </div>
+        <div class="gopher-card">
+          <img src="https://bittu96.github.io/b2space/asset/img/gopher.gif" alt="Go Gopher dancing" />
+          <div class="gopher-caption">
+            <em>"My spirit animal when the build passes ✨"</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv-r">
+        <div class="sec-label">The human</div>
+        <h2 class="sec-h">About <em>Me</em></h2>
+
+        <div class="about-prose">
+          <p>I'm a backend engineer who genuinely loves what I do. Five years in — from IIT research labs to high-stakes fintech and telecom infrastructure — and I still get a quiet thrill when a distributed system clicks into place perfectly.</p>
+          <p>My day job involves Go, Kafka, and microservices at scale. My evenings might involve an open source library, a blockchain experiment, or just reading about system design over coffee.</p>
+        </div>
+
+        <blockquote>
+          "The greatest glory in living lies not in never falling, but in rising every time we fall."
+          <cite>— Nelson Mandela</cite>
+        </blockquote>
+
+        <div class="edu-box rv">
+          <div class="edu-inst">🏛️ Indian Institute of Technology, Bhubaneswar</div>
+          <div class="edu-detail">B.Tech · Mechanical Engineering · 2015 – 2019</div>
+        </div>
+
+        <div class="interest-row rv">
+          <span class="int-pill">🐹 Golang</span>
+          <span class="int-pill">🎨 Art</span>
+          <span class="int-pill">🎲 Board Games</span>
+          <span class="int-pill">🏸 Badminton</span>
+          <span class="int-pill">🔓 Open Source</span>
+          <span class="int-pill">☁️ Cloud</span>
+          <span class="int-pill">📖 Research</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<div class="wave" style="background:var(--sky3);"><svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#f2ebe0" d="M0,20 C360,50 720,5 1080,30 C1260,42 1380,18 1440,28 L1440,50 L0,50Z"/></svg></div>
+
+<section id="contact" class="sec">
+  <div class="sec-inner">
+    <div class="contact-inner">
+      <img src="https://bittu96.github.io/b2space/asset/img/gopher.gif" alt="Gopher waving" class="contact-gopher rv" />
+      <div class="sec-label rv" style="justify-content:center;">Let's Connect</div>
+      <h2 class="sec-h rv" style="text-align:center;">Let's build something <em>great</em></h2>
+      <p class="rv" style="font-size:0.92rem;color:var(--ink3);max-width:500px;margin:0 auto 1.5rem;line-height:1.85;text-align:center;">
+        Whether it's a backend challenge, a distributed systems conversation, an open source collaboration, or just a chat about Go — my inbox is open.
+      </p>
+      <a href="mailto:mrudulkatla@gmail.com" class="contact-email rv">mrudulkatla@gmail.com</a>
+      <div class="contact-social rv">
+        <a href="https://github.com/Bittu96" target="_blank" class="btn-fill">🐙 GitHub</a>
+        <a href="http://www.linkedin.com/in/mrudulkatla" target="_blank" class="btn-line">💼 LinkedIn</a>
+        <a href="https://drive.google.com/file/d/1YQmpa0Vn86RplxZL3021qzwC_PpAEcAO/view" target="_blank" class="btn-line">📄 Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">mrudul.katla</span>
+  <span>Crafted with care · Go · Coffee · A dancing gopher 🐹</span>
+  <span>© 2025 · <a href="mailto:mrudulkatla@gmail.com">mrudulkatla@gmail.com</a></span>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), (i % 5) * 90);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => obs.observe(el));
+
+// Nav active state
+const secs = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+  navAs.forEach(a => {
+    const active = a.getAttribute('href') === '#' + cur;
+    a.style.color = active ? 'var(--sage)' : '';
+    if (active) a.style.setProperty('--w','100%');
+    else a.style.removeProperty('--w');
+  });
+}, {passive:true});
+</script>
 </body>
-
 </html>
